@@ -144,9 +144,13 @@
 
 			var result1 = "Once upon a time ther was a Developer named " + name + ".";
 
-			var result2 = name + " came to General Assembly to " + cerealize[1].value + " the great mountain of programming knowledge.";
+			var result2 = name + " came to General Assembly to " + verb1 + " the great mountain of programming knowledge.";
 
-			var result3 = 
+			var result3 = mission + ", " + name  + " shouted.";
+
+			var result4 = "Though " + sentiment + ", " + name + " was able to overcome all obstacles with the power of their " + noun1 + ".";
+
+			var result5 = "In the end, their success can be contributed entirely to their " + adjective2 + " " + noun2 + ".";
 				//For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
 			/*
 				"Once upon a time there was a Developer named NAME."
@@ -162,7 +166,7 @@
 	    	*/ 
 
 	    	$("section.container.results")
-	    		.append("<p>" + result1 + "<br>" + result2 + "</p>");
+	    		.append("<p>" + result1 + "<br>" + result2 + "<br>" + result3 + "<br>" + result4 + "<br>" + result5 + "</p>");
 		});
 	</script>
 
