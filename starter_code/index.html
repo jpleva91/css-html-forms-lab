@@ -118,7 +118,6 @@
 		    event.preventDefault();
 	    	// Run the 'makeResults' function seen above
 	    	makeResults();
-			var name = $("input#name").val();
 			var cerealize = $("form").serializeArray();
 
 	    	function objectifyForm(cerealize) {//serialize data function
@@ -130,20 +129,24 @@
 			  return returnArray;
 			}
 
+			var name = cerealize[0].value;
+			var verb1 = cerealize[1].value;
+			var mission = cerealize[2].value;
+			var sentiment = cerealize[3].value;
+			var noun1 = cerealize[4].value;
 
-			var tester = {
-				name1: "jared",
-				value: "sadf"
-			};
+			var adjective1 = $(".check").children("input:checked").map(function() {
+				return this.value;
+				});
 
-			console.log(tester);
-			console.log(cerealize);
+			var adjective2 = adjective1.get().join(', ');
+			var noun2 = $("input#noun-2").val();
 
-			console.log(cerealize[0].value);
+			var result1 = "Once upon a time ther was a Developer named " + name + ".";
 
-			var result1 = "Once upon a time ther was a Developer named " + cerealize[0].value + ".";
-			var result2 = cerealize[0].value + " came to General Assembly to " + cerealize[1].value + " the great mountain of programming knowledge.";		
-			
+			var result2 = name + " came to General Assembly to " + cerealize[1].value + " the great mountain of programming knowledge.";
+
+			var result3 = 
 				//For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
 			/*
 				"Once upon a time there was a Developer named NAME."
