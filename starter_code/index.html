@@ -91,12 +91,16 @@
 			</form>
 		</section>
 	</section>
-	
+		
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 
 		var main = $('#main');
+
+
+
+
 		function makeResults() {
 
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
@@ -111,13 +115,37 @@
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
-
+		    event.preventDefault();
 	    	// Run the 'makeResults' function seen above
+	    	makeResults();
+			var name = $("input#name").val();
+			var cerealize = $("form").serializeArray();
 
-	    	/*
+	    	function objectifyForm(cerealize) {//serialize data function
+
+			  var returnArray = {};
+			  for (var i = 0; i < formArray.length; i++){
+			    returnArray[formArray[i]['name']] = formArray[i]['value'];
+			  }
+			  return returnArray;
+			}
+
+
+			var tester = {
+				name1: "jared",
+				value: "sadf"
+			};
+
+			console.log(tester);
+			console.log(cerealize);
+
+			console.log(cerealize[0].value);
+
+			var result1 = "Once upon a time ther was a Developer named " + cerealize[0].value + ".";
+			var result2 = cerealize[0].value + " came to General Assembly to " + cerealize[1].value + " the great mountain of programming knowledge.";		
 			
-				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
-
+				//For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+			/*
 				"Once upon a time there was a Developer named NAME."
 
 				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
@@ -129,6 +157,9 @@
 				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
 
 	    	*/ 
+
+	    	$("section.container.results")
+	    		.append("<p>" + result1 + "<br>" + result2 + "</p>");
 		});
 	</script>
 
