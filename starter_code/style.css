@@ -5,6 +5,7 @@
 	http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
 	font-family: 'Proza Libre', sans-serif;
 	border-radius: 5px;
+	padding: 2px;
 }
 
 /* 
@@ -26,11 +27,11 @@ body {
 /*-------- Main Styles --------*/
 
 /* 
-	Make the main container the full width of the page.
+	//Make the main container the full width of the page.
 
-	Make the two inner containers (the form and the results) float side by side, on the left side of the screen.
+	//Make the two inner containers (the form and the results) float side by side, on the left side of the screen.
 
-	Every container, form, input, and button should have rounded corners.
+	//Every container, form, input, and button should have rounded corners.
 */
 
 main {
@@ -39,42 +40,116 @@ main {
 
 .formSection.container {
 	float: left;
+	display: inline-block;
+	text-align: center;
 }
 
 .container.results {
 	float: left;
+	background-color: #C8DBB3;
+	width: 100%;
+	max-width: 500px;
+	padding: 5px;
+	margin: 2px;
+	margin-left: 15px;
 }
 
 /*-------- Form Styles --------*/
 
+.form {
+	width: 100%;
+	max-width: 500px;
+	background-color: #E3E6EC;
+	float: left;
+}
+.row *{
+	padding: 2px 1px;
+}
+
+.formGroup *{
+	display: inline-block;
+	width: 100%;
+}
+
+.formGroup label {
+	display: block;
+	width: 100%;
+	padding: 1px 0;
+}
+
+.radio label {
+	display: block;
+	position: relative;
+	text-align: justify;
+	left: 5px;
+}
+
+.check label {
+	display: block;
+	text-align: justify;
+	left: 5px;
+}
+
+label {
+	text-align: justify;
+}
+.radio {
+	float: right;
+}
+
+input, textarea, select {
+	min-height: 48px;
+	padding: 14px;
+	border: 1px solid #CCC;
+	box-shadow: none;
+}
+
+textarea {
+	min-height: 100px;
+}
+
+input[type="submit"] {
+	float: right;
+	width: auto;
+	background-color: rgba(39,208,127,.5);
+	font-weight: 700;
+}
+
+input[type="submit"]:hover {
+	background-color: rgba(39,208,127,1);
+}
+
+
+
+
 
 /* 
 
-	Make sure the form itself fills the width of whatever container its in, but no larger than 500px.
+	//Make sure the form itself fills the width of whatever container its in, but no larger than 500px.
 	
-	The background should be #E3E6EC, and it should align to the middle of its container.
+	//The background should be #E3E6EC, and it should align to the middle of its container.
 	
-	Every element should have nice, even padding or margin around it.
+	//Every element should have nice, even padding or margin around it.
 
-	.row elements should be spaced out so they're not touching.
+	//.row elements should be spaced out so they're not touching.
 
-	.formGroup elements should fill the width of their container, and be inline-block.
+	//.formGroup elements should fill the width of their container, and be inline-block.
 
-	The labels inside of .formGroup should be on their own line above form options, fill the width of their container, and have top/bottom padding.
+	//The labels inside of .formGroup should be on their own line above form options, fill the width of their container, and have top/bottom padding.
 
-	Radio buttons and checkbox options should each be on their own line, and indented a little. 
+	//Radio buttons and checkbox options should each be on their own line, and indented a little. 
 
 	Radio buttons and checkbox labels should be directly to the right of their corresponding inputs, and the text should vertically align with the inputs. 
 
-	Text inputs, submit buttons, and select boxes should all be at least 48px tall. The should have 14px of padding around their text. 
+	//Text inputs, submit buttons, and select boxes should all be at least 48px tall. The should have 14px of padding around their text. 
 
-	Textareas should be at least 100px tall.
+	//Textareas should be at least 100px tall.
 
-	Text inputs, select boxes, and textareas should have a 1px border that's #CCC, and none of the default shadows.
+	//Text inputs, select boxes, and textareas should have a 1px border that's #CCC, and none of the default shadows.
 
-	The submit button should float to the right, be bolded, and only be as wide as the text makes it.
+	//he submit button should float to the right, be bolded, and only be as wide as the text makes it.
 
-	The submit button should be rga(39, 208, 127), but only 50% opacity. On hover, it should be 100% opacity.
+	//The submit button should be rga(39, 208, 127), but only 50% opacity. On hover, it should be 100% opacity.
 	
 	
 */
@@ -85,9 +160,9 @@ main {
 
 /* 
 
-	The results container should also fill the width of its container, but only up to 500px.
+	//The results container should also fill the width of its container, but only up to 500px.
 
-	The results container should have a background color of #C8DBB3, and comfortable padding around the text.
+	//The results container should have a background color of #C8DBB3, and comfortable padding around the text.
 
 */
 
